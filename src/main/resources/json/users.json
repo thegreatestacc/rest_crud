@@ -1,0 +1,138 @@
+[
+  {
+  "id": 1,
+  "name": "Nikolaus",
+  "login": "ntopes0",
+  "password": "d6KETMrH",
+  "roles": [
+    {
+      "id": 1,
+      "role_name": "Admin"
+    },
+    {
+      "id": 2,
+      "role_name": "Analyst"
+    }
+  ]
+},
+  {
+    "id": 2,
+    "name": "Cacilia",
+    "login": "cskelhorn1",
+    "password": "RY7ExgI",
+    "roles":[
+      {
+        "id": 3,
+        "role_name": "Operator"
+      }
+      ]
+  },
+  {
+    "id": 3,
+    "name": "Eldridge",
+    "login": "esisse2",
+    "password": "ykHMlnwgVW",
+    "roles": [
+      {
+        "id": 2,
+        "role_name": "Analyst"
+      },
+      {
+        "id": 3,
+        "role_name": "Operator"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Adrian",
+    "login": "afulmen3",
+    "password": "UL6EewG",
+    "roles":
+            [
+      {
+        "id": 1,
+        "role_name": "Admin"
+      }
+              ]
+  },
+  {
+    "id": 5,
+    "name": "Lolita",
+    "login": "ljacobs4",
+    "password": "5gntaSlP",
+    "roles":
+            [
+      {
+        "id": 2,
+        "role_name": "Analyst"
+      }
+              ]
+  },
+  {
+    "id": 6,
+    "name": "Berti",
+    "login": "bmewes5",
+    "password": "GtFLQiOoO2Yr",
+    "roles":[
+      {
+        "id": 3,
+        "role_name": "Operator"
+      }
+      ]
+  },
+  {
+    "id": 7,
+    "name": "Andromache",
+    "login": "adelouch6",
+    "password": "AWuCyrxBph5",
+    "roles":
+            [
+      {
+        "id": 1,
+        "role_name": "Admin"
+      }
+              ]
+  },
+  {
+    "id": 8,
+    "name": "Joni",
+    "login": "jrosbrough7",
+    "password": "sI3aYvSXZI6k",
+    "roles":[
+      {
+        "id": 2,
+        "role_name": "Analyst"
+      }
+      ]
+  },
+  {
+    "id": 9,
+    "name": "Carmencita",
+    "login": "cschwander8",
+    "password": "sdrhU2RhFnR5",
+    "roles": [
+      {
+        "id": 1,
+        "role_name": "Admin"
+      },
+      {
+        "id": 3,
+        "role_name": "Operator"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Mike",
+    "login": "mgrinter9",
+    "password": "Pv2LCScOLn",
+    "roles":
+            [
+      {
+        "id": 3,
+        "role_name": "Operator"
+      }
+              ]
+  }
+]
