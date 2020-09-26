@@ -24,7 +24,7 @@ public class RestCrudApplication {
 		SpringApplication.run(RestCrudApplication.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	CommandLineRunner runner(UserService userService){
 		return args -> {
 			//read json and write to db
@@ -41,6 +41,6 @@ public class RestCrudApplication {
 				logger.error("All users didn't save!" + e.getMessage());
 			}
 		};
-	}
+	}*/
 
 }

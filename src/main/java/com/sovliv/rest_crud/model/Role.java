@@ -12,12 +12,10 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "role")
-//@Embeddable
 public class Role {
 
     @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long role_id;
 
     private String role_name;
 }
