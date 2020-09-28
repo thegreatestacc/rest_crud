@@ -1,9 +1,11 @@
 package com.sovliv.rest_crud.service;
 
+import com.sovliv.rest_crud.exception.ResourceNotFoundException;
 import com.sovliv.rest_crud.model.User;
 import com.sovliv.rest_crud.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,38 +22,41 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public Iterable<User> getAllUsers() {
+    public ResponseEntity<Iterable<User>> getAllUsers() {
         logger.info("*** all users found ***");
-        return userRepository.findAll();
+        userRepository.findAll().forEach(role -> role.setRoles(null));
+        Iterable<User> users = userRepository.findAll();
+        return ResponseEntity.ok().body(users);
     }
 
-    public User getOneUser(Long id) {
-        Optional<User> optional = userRepository.findById(id);
-        if (optional.isEmpty()) {
-            throw new RuntimeException("user not found");
-        }
-        logger.info("*** user received ***");
-        return optional.get();
+    public ResponseEntity<User> getOneUser(Long id) throws ResourceNotFoundException {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("user not found for this id: " + id));
+        logger.info("*** user found ***");
+        return ResponseEntity.ok().body(user);
     }
 
-    public User create(User user) {
+    public ResponseEntity<User> create(User user) {
         logger.info("*** user created ***");
-        return userRepository.save(user);
+        userRepository.save(user);
+        return ResponseEntity.ok().body(user);
     }
 
-    public User update(User user, Long id) {
+    public ResponseEntity<User> update(User user, Long id) {
         Optional<User> optional = userRepository.findById(id);
         if (optional.isEmpty()) {
             throw new RuntimeException("*** user not found ***");
         }
         user.setId(id);
         logger.info("*** user updated ***");
-        return userRepository.save(user);
+        User savedUser = userRepository.save(user);
+        return ResponseEntity.ok().body(savedUser);
     }
 
-    public void delete(Long id) {
+    public ResponseEntity delete(Long id) {
         logger.info("*** user deleted ***");
         userRepository.deleteById(id);
+        return ResponseEntity.ok().body("user with id: " + id + " deleted");
     }
 
     @Transactional
